@@ -1,0 +1,90 @@
+/**
+green: 8bA636
+brown: 73552F
+
+**/
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #ededed;
+  background: url("../images/white_texture.png") repeat;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333;
+}
+
+header h1{
+  color: #73552F;
+  font-family: ff-nuvo-sc-web-pro, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  margin: 0;
+  font-size: 100px;
+  line-height: 100px;
+  text-shadow: 0px -1px 0px #000, 0px 2px 0px #fff;
+}
+
+h2.headline{
+  font-family: ff-nuvo-sc-web-pro, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  margin: 20px 0px;
+  color: #000;
+}
+
+footer{
+  margin: 50px 0px 10px 0px;
+}
+.center{
+  text-align: center;
+}
+
+.nuvo_bold{
+  font-family: ff-nuvo-sc-web-pro, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+h2.nuvo_bold{
+  font-size: 200%;
+}
+
+p .nuvo_bold{
+  font-size: 125%;
+}
+
+.rounded{
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+.inset_shadow{
+  -webkit-box-shadow: inset -1px -1px 0px 0px #888;
+     -moz-box-shadow: inset -1px -1px 0px 0px #888;
+          box-shadow: inset -1px -1px 0px 0px #888;
+}
+
+.button {
+  display: block;
+  background-color: #99cc33;
+  padding: 15px 0px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 1px 1px 0px #888;
+  -webkit-box-shadow: 1px 1px 1px #4a4a4a;
+     -moz-box-shadow: 1px 1px 1px #4a4a4a;
+          box-shadow: 1px 1px 1px #4a4a4a;
+}
+
+
+
+.slider-wrapper{
+  height: 300px;
+  margin: 20px 0px 0px 0px;
+}
