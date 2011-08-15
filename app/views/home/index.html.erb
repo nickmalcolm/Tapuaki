@@ -6,13 +6,13 @@
   <div id="slider" class="first clearfix" style="background-color:#333;color:#fff;">
     <% slides.each do |s| %>
       <div class="slide">
-        <div class="grid8 first">
+        <div class="image">
           <div class="featured_ribbon nuvo">
             <h2>Featured</h2>
           </div>
-          <%= image_tag s[:image_url], :title => "#{s[:title]} - #{s[:subtitle]}", :style=>"height:260px;width:610px" %>
+          <%= image_tag s[:image_url], :title => "#{s[:title]} - #{s[:subtitle]}" %>
         </div>
-        <div class="grid4 last" style="height: 210px;">
+        <div class="text">
           <h2 class="nuvo">
             <%= truncate s[:title].upcase, :length => 25 %>
           </h2>
@@ -20,10 +20,10 @@
             <%= truncate s[:subtitle], :length => 35 %>
           </h3>
           <p>
-            <%= truncate s[:text], :length => 200, :separator => ' ' %>
+            <%= truncate s[:text], :length => 190, :separator => ' ' %>
           </p>
         </div>
-        <div class="grid4 last">
+        <div class="">
           <%= link_to "Act Now".downcase, "", :class=>"button shadow rounded nuvo_bold" %>
         </div>
       </div>
