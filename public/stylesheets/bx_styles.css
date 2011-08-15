@@ -126,9 +126,8 @@
 .featured_ribbon{
   position:absolute;
   z-index: 999;
-  width: 100px;
   color: #fff;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .featured_ribbon h2{
