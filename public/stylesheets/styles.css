@@ -27,7 +27,7 @@ header h1{
   margin: 20px 0px;
   font-size: 98px;
   line-height: 77px;
-  text-shadow: 0px -1px 0px #444, 0px 2px 3px #fff;
+  text-shadow: 0px -2px 1px #542, 0px 4px 5px #fff;
 }
 
 h2.headline{
@@ -70,12 +70,6 @@ p .nuvo_bold{
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
-}
-
-.inset_shadow{
-  -webkit-box-shadow: inset -1px -1px 0px 0px #888;
-     -moz-box-shadow: inset -1px -1px 0px 0px #888;
-          box-shadow: inset -1px -1px 0px 0px #888;
 }
 
 .cta_container{

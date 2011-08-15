@@ -1,7 +1,4 @@
 <div class="slider-container">
-  <div class="featured_ribbon nuvo">
-    <h2>Featured</h2>
-  </div>
   
   <% slides = [ {:image_url => "slider/tongan_girl2.jpg", :title => "Breakfast supplies", :subtitle => "Port Villa Primary, Vanuatu", :text => "Some students come from families who can't afford breakfast for their children. Approximately 10 to 15 students a day are disadvantaged from the beginning of their day due to a lack of food. We would love to provide toast or cereal to these kids. You can help us."},
                 {:image_url => "slider/tongan_guys.jpg", :title => "P.E. Gear for Year 4s", :subtitle => "Veiuto Primary School, Suva, Fiji",  :text => "The pupils of Veiuto Primary School are in need of resources to teach physical education better. They love to play outside, it teaches valuable team work skills, and keeps students healthy."},
@@ -10,6 +7,9 @@
     <% slides.each do |s| %>
       <div class="slide">
         <div class="grid8 first">
+          <div class="featured_ribbon nuvo">
+            <h2>Featured</h2>
+          </div>
           <%= image_tag s[:image_url], :title => "#{s[:title]} - #{s[:subtitle]}", :style=>"height:260px;width:610px" %>
         </div>
         <div class="grid4 last" style="height: 210px;">
