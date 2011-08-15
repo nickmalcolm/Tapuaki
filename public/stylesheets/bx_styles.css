@@ -1,0 +1,139 @@
+/* @override http://localhost/bxslider_v3_plugin/css/styles.css */
+
+/*
+ * To change the color scheme of slider change each 
+ * background property for each of the five styles below
+ */
+ 
+/*next button*/
+.bx-next, .bx-prev{
+  position:absolute;
+	top:40%;
+	z-index:999;
+	width: 30px;
+	height: 30px;
+	text-indent: -999999px;
+	background: url(../images/nivo/arrows.png) no-repeat;
+	opacity: 0.8;
+	display: none;
+}
+.bx-next:hover, .bx-prev:hover {
+  opacity: 1;
+}
+.bx-next {
+	right:20px;
+	background-position: -30px 0;
+}
+
+/*previous button*/
+.bx-prev {
+	left:20px;
+	background-position: 0 0;
+}
+
+/*pager links*/
+.bx-pager a {
+	margin-right: 5px;
+	color: #fff;
+	padding: 3px 8px 3px 6px;
+	font-size: 12px;
+	zoom:1;
+	background: url(gray_pager.png) no-repeat 0 -20px;
+}
+
+/*auto start button*/
+.bx-auto .start {
+	background: url(gray_auto.png) no-repeat 0 2px;
+	padding-left: 13px;
+}
+
+/*auto stop button*/
+.bx-auto .stop {
+	background: url(gray_auto.png) no-repeat 0 -14px;
+	padding-left: 13px;
+}
+
+/*
+ * End color scheme styles
+ */
+
+/*pager links hover and active states*/
+.bx-pager .pager-active,
+.bx-pager a:hover {
+	background-position: 0 0;
+}
+
+/*pager wrapper*/
+.bx-pager {
+	text-align:center;
+	padding-top: 7px;
+	font-size:12px;
+	color:#666;
+}
+
+/*captions*/
+.bx-captions {
+	text-align:center;
+	font-size: 12px;
+	padding: 7px 0;
+	color: #666;
+}
+
+/*auto controls*/
+.bx-auto {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.bx-auto a {
+	color: #666;
+	font-size: 12px;
+}
+
+.slider-container{
+  margin-bottom: 40px;
+  border: 10px solid #fff;
+  width: 920px;
+  height: 260px;
+  overflow: hidden;
+  background:#fff url(../images/nivo/loading.gif) no-repeat 50% 50%;
+   -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+      -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+           box-shadow: 0px 1px 5px 0px #4a4a4a;
+}
+
+.slide .grid8{
+  width: 610px;
+}
+
+.slide .grid4{
+  width: 270px;
+  margin-right: 20px;
+}
+
+.slide p{
+  line-height: 20px;
+}
+.slide h2{
+  margin: 10px 0px;
+}
+
+.slide .secondary{
+  color: #ccc;
+  font-style: italic;
+}
+
+.featured_ribbon{
+  position:absolute;
+  z-index: 999;
+  width: 100px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.featured_ribbon h2{
+  margin: 0px;
+  padding: 14px 10px;
+  font-size: 40px;
+  text-shadow: 1px 1px 0px #444;
+}
