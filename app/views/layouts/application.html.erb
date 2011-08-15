@@ -12,14 +12,14 @@
        More info: h5bp.com/b/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Tapuaki</title>
+  <title>T&acirc;puaki</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width,initial-scale=1">
   
-  <%= stylesheet_link_tag "boilerplate", "960", "nivo-slider", "styles" %>
+  <%= stylesheet_link_tag "boilerplate", "960", "bx_styles", "styles" %>
   
   
   <%= csrf_meta_tag %>
@@ -39,9 +39,6 @@
     </header>
     <nav class="grid7 nuvo">
       <ul>
-        <li class="shadow">See Requests</li>
-        <li class="shadow">Make a Request</li>
-        <li class="shadow">Help</li>
         <li class="shadow last">Log In</li>
       </ul>
     </nav>
@@ -53,9 +50,12 @@
     </footer>
   </div>
   
-  
+  <!--
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.6.2.min.js"><\/script>')</script>//-->
+  <%= javascript_include_tag("libs/jquery-1.6.2.min.js") %>
+
+  <%= content_for(:deferred_scripts) %>
 
   <script>
     window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
