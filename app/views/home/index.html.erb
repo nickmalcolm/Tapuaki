@@ -3,7 +3,7 @@
     <% @featured.each do |f| %>
       <div class="slide">
         <div class="image">
-          <%= image_tag "slider/tongan_guys.jpg" %>
+          <%= image_tag f.photo(:featured) %>
         </div>
         <div class="text">
           <h2 class="nuvo">
