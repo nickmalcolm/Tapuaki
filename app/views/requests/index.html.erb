@@ -1,25 +1,26 @@
 <h1>Listing requests</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="grid9 first clearfix">
+  <% @requests.each_with_index do |request, i| %>
+    <% klass = "grid3 card_container rounded ";
+        klass += "first" if i%3 == 0;
+        klass += "last"  if (i+1)%3 == 0 %>
+    <%= div_for request, :class=>klass do %>
+      <div class="card">
+        <%= image_tag request.photo(:small) %>
+        <%= link_to request.title, request, :class => "title" %>
+        <p>
+          <%= request.description %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-<% @requests.each do |request| %>
-  <tr>
-    <td><%= request.title %></td>
-    <td><%= request.description %></td>
-    <td><%= link_to 'Show', request %></td>
-    <td><%= link_to 'Edit', edit_request_path(request) %></td>
-    <td><%= link_to 'Destroy', request, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="grid3 last" style="float:right">
+  <h2>Sidebar</h2>
+</div>
 
-<br />
-
-<%= link_to 'New Request', new_request_path %>
+<div class="grid12 lone">
+  <%= link_to 'New Request', new_request_path %>
+</div>

@@ -380,3 +380,8 @@ body {
 .last{
   margin-right: 0px;
 }
+
+.lone{
+  margin-left: 0px;
+  margin-right: 0px;
+}
