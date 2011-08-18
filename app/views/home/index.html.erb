@@ -7,9 +7,6 @@
     <% slides.each do |s| %>
       <div class="slide">
         <div class="image">
-          <div class="featured_ribbon nuvo">
-            <h2>Featured</h2>
-          </div>
           <%= image_tag s[:image_url], :title => "#{s[:title]} - #{s[:subtitle]}" %>
         </div>
         <div class="text">
