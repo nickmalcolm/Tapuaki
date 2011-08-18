@@ -19,10 +19,12 @@ header {
   height: 120px;
 }
 
-header h1{
+header, header a{
   color: #73552F;
-  font-family: ff-nuvo-sc-web-pro, sans-serif;
-  font-style: normal;
+  text-decoration: none;
+}
+  
+header h1{
   font-weight: 800;
   margin: 20px 0px;
   font-size: 98px;
