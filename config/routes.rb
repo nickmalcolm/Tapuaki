@@ -1,6 +1,6 @@
 Tapuaki::Application.routes.draw do
   
-  resources :requests
+  resources :appeals
 
   root :to => "home#index"
   

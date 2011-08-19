@@ -10,9 +10,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110818071708) do
+ActiveRecord::Schema.define(:version => 20110819022642) do
 
-  create_table "requests", :force => true do |t|
+  create_table "appeals", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
