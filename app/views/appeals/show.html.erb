@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= content_tag :h1, @appeal.title %>
+
+<%= image_tag @appeal.photo.url(:featured) %>
+
+<p>
+  <b>Description:</b>
+  <%= @appeal.description %>
+</p>
