@@ -1,23 +1,25 @@
 <div class="slider-container">
-  <div id="slider" class="clearfix" style="background-color:#333;color:#fff;">
+  <div id="slider">
     <% @featured.each do |f| %>
-      <div class="slide">
+      <div class="slide clearfix">
         <div class="image">
           <%= image_tag f.photo(:featured) %>
         </div>
-        <div class="text">
-          <h2 class="nuvo">
-            <%= truncate f.title.upcase, :length => 25 %>
-          </h2>
-          <h3 class="secondary">
-            <%#= truncate s[:subtitle], :length => 35 %>
-          </h3>
-          <p>
-            <%= truncate f.description, :length => 190, :separator => ' ' %>
-          </p>
-        </div>
-        <div class="">
-          <%= link_to "Act Now".downcase, "", :class=>"button shadow rounded nuvo_bold" %>
+        <div class="details">
+          <div class="text">
+            <h2 class="nuvo">
+              <%= truncate f.title.upcase, :length => 25 %>
+            </h2>
+            <h3 class="secondary">
+              Subtitle
+            </h3>
+            <p>
+              <%= truncate f.description, :length => 190, :separator => ' ' %>
+            </p>
+          </div>
+          <div class="act_now">
+            <%= link_to "Act Now".downcase, "", :class=>"button shadow rounded nuvo_bold" %>
+          </div>
         </div>
       </div>
     <% end%>
@@ -62,9 +64,9 @@
 <% content_for(:jquery) do %>
     $('#slider').bxSlider({
         auto: true,
-        autoHover: true,
-        pause: 12000
-      });
+      autoHover: true,
+      pause: 12000
+    });
     $('.slider-container').mouseenter(function(){
       $(".bx-prev, .bx-next").fadeIn('slow');
     }).mouseleave(function(){
