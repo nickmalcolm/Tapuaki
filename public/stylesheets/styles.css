@@ -117,19 +117,20 @@ nav li{
 
 .card{
   padding: 5px;
-  background-color: #fff;
-  border: 1px solid #aaa;
+  border: 5px solid #ccc;
   height: 375px;
   margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .card_container.lifted::after{
   content: "";
   width: 210px;
-  height: 10px;
+  height: 20px;
   -webkit-transform: rotate(2deg); 
   -moz-transform:    rotate(2deg);
-  box-shadow: 3px 3px 3px #4a4a4a;
+  box-shadow: 3px 3px 5px #4a4a4a;
+  border-radius: 6px;
   background-color: #4a4a4a;
   position:absolute;
   bottom: 20px;
@@ -141,3 +142,5 @@ nav li{
   position: absolute;
   z-index: 2;
 }
+
+.
