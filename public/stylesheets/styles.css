@@ -69,9 +69,9 @@ p .nuvo_bold{
 }
 
 .rounded{
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }
 
 .cta_container{
@@ -106,12 +106,19 @@ nav li{
   color: #fff;
   padding: 5px 15px 7px 15px;
   margin: 0px 10px;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
   font-size: 18px;
   line-height: 18px;
   text-shadow: 0px -1px 0px #444, 0px 1px 0px #444;
+}
+
+.border{
+  border: 10px solid #fff;
+}
+
+.fullshadow{
+   -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+      -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+           box-shadow: 0px 1px 5px 0px #4a4a4a;
 }
 
 
@@ -143,4 +150,50 @@ nav li{
   z-index: 2;
 }
 
-.
+.thermometer, .bar{/*, .thermometer::after{*/
+  display: block;
+  position: absolute;
+  z-index: 10;
+}
+
+.thermometer, .bar{
+  width: 15px;
+  opacity: 0.9;
+}
+
+.thermometer{
+  height: 215px;
+  background-color: #fff;
+  margin: 30px;
+}
+
+.bar{
+  background-color: #99cc33;
+  height: 0px;
+  bottom: -1px;
+}
+
+.picture img{
+  width: 600px;
+}
+
+/*
+.thermometer::after{
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display:block;
+  background-color: #99cc33;
+  bottom: -40px;
+  left: -13px;
+}*/
+
+.appeal h2{
+  float: left;
+  margin-right: 20px;
+}
+
+.appeal h2 .keyword{
+  color: #aaa;
+}

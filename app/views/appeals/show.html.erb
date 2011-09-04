@@ -1,10 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<%= content_tag :h1, @appeal.title %>
 
-<%= image_tag @appeal.photo.url(:featured) %>
+<div class="grid8 first appeal">
+  
+  <%= content_tag :h1, @appeal.title %>
+  <div class="picture">
+    <div class="thermometer">
+      <div class="bar"></div>
+    </div>
+  
+    <%= image_tag @appeal.photo.url(:featured), :class=>"border fullshadow" %>
+  </div>
+  
+  <div class="grid8 lone">
+    <h2><%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span></h2>
+    <h2>$1256.70 <span class="keyword">Raised</span></h2>
+    <h2>35 Days <span class="keyword">Remaining</span></h2>
+  </div>
+  
+  <p>
+    <%= @appeal.description %>
+  </p>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @appeal.description %>
-</p>
+
+<div class="grid4 last">
+  <%= content_tag :h1, "Get Involved" %>
+</div>
+
+<% content_for(:jquery) do %>
+  $(".bar").animate({
+      height: '+'+((4000-1256.70)/4000)*100+'%'
+    }, 2000);
+<% end %>
