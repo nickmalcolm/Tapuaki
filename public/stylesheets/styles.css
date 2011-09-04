@@ -15,7 +15,6 @@ body{
 }
 
 header {
-  margin-bottom: 20px;
   height: 120px;
 }
 
@@ -45,6 +44,7 @@ h2.headline{
 footer{
   margin: 50px 0px 10px 0px;
 }
+
 .center{
   text-align: center;
 }
@@ -164,7 +164,7 @@ nav li{
 .thermometer{
   height: 215px;
   background-color: #fff;
-  margin: 30px;
+  margin: 20px;
 }
 
 .bar{
@@ -189,11 +189,77 @@ nav li{
   left: -13px;
 }*/
 
-.appeal h2{
-  float: left;
-  margin-right: 20px;
+.figures{
+  position: absolute;
+  z-index: 100;
+  right: 30px;
+  bottom: 120px;
 }
 
+.appeal{
+  float: left;
+}
+
+.appeal h2{
+  margin: 20px 0px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #4a4a4a;
+}
+
+.appeal h2{
+  font-size: 240%;
+  text-align: right;
+}
+
+
 .appeal h2 .keyword{
-  color: #aaa;
+  opacity: 0.7;
+}
+
+p.bigger{
+  margin: 20px 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h3{
+  font-size: 150%;
+  margin: 10px 0px;
+}
+
+.package:hover{
+  background-color: #aaa;
+  background-color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.package .keyword{
+  font-weight: 800;
+  font-size: 120%;
+}
+
+.package{
+  padding: 20px;
+  border-bottom: 1px solid #aaa;
+  border-top: 1px solid #eee;
+}
+
+.package.top{
+  border-top: 0px;
+}
+
+.package.bottom{
+  border-bottom: 0px;
+}
+
+.package h3{
+  margin: 0px;
+}
+
+.half_opacity{
+  opacity: 0.5;
+}
+
+.no_opacity{
+  opacity: 1 !important;
 }
