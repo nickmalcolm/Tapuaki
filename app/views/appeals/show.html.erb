@@ -1,35 +1,65 @@
-<p id="notice"><%= notice %></p>
-
-
-<div class="grid8 first appeal">
+<div class="appeal">
+  <div class="grid8 first">
   
-  <%= content_tag :h1, @appeal.title %>
-  <div class="picture">
-    <div class="thermometer">
-      <div class="bar"></div>
+    <%= content_tag :h1, @appeal.title %>
+    <div class="picture border fullshadow">
+      <div class="thermometer">
+        <div class="bar"></div>
+      </div>
+  
+      <div class="figures">
+        <h2>
+          <%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span>
+        </h2>
+        <h2>
+          $1256.70 <span class="keyword">Raised</span>
+        </h2>
+        <h2>
+          35 Days <span class="keyword">Remaining</span>
+        </h2>
+      </div>
+      
+      <%= image_tag @appeal.photo.url(:featured) %>
     </div>
   
-    <%= image_tag @appeal.photo.url(:featured), :class=>"border fullshadow" %>
+    <p class="bigger">
+     <%= @appeal.description %>
+    </p>
+    
   </div>
-  
-  <div class="grid8 lone">
-    <h2><%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span></h2>
-    <h2>$1256.70 <span class="keyword">Raised</span></h2>
-    <h2>35 Days <span class="keyword">Remaining</span></h2>
+
+  <div class="grid4 last">
+    <%= content_tag :h1, raw("&nbsp;") %>
+    <% packages = [{:donation=>"$5", :description=>"Praesent fringilla, diam nec eleifend luctus, sapien lectus malesuada odio, a scelerisque nisl justo eget leo. Fusce sit amet elit sit amet nulla semper egestas sit amet vitae eros.", :supporters => 9, :remaining => nil},
+      {:donation=>"$25", :description=>"Aliquam erat volutpat. Aliquam eget varius urna. Praesent gravida turpis non turpis sodales congue. Vestibulum vulputate blandit iaculis.", :supporters => 2, :remaining => 8},
+      {:donation=>"$50", :description=>"A copy of the Modest Medusa Season 1 book, signed by myself and my niece Marah. I'll also do a little Medusa sketch on the title page! You'll also receive the previously mentioned reward.", :supporters => 1, :remaining => 4}]%>
+    <% packages.each_with_index do |package, i| %>
+    <% klass = "package clearfix ";
+        klass += "top" if (i.eql? 0);
+        klass += "bottom"  if (i.eql? packages.count-1) %>
+      <div class="<%= klass %>">
+        <h3>
+          Donate <%= package[:donation] %> or more
+        </h3>
+        <p>
+          <%= package[:supporters] %> supporters
+          <% if package[:remaining] %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= package[:remaining] %> remaining
+          <% end %>
+        </p>
+        <%= content_tag :p, package[:description] %>
+      </div>
+    <% end %>
   </div>
-  
-  <p>
-    <%= @appeal.description %>
-  </p>
-</div>
 
-
-<div class="grid4 last">
-  <%= content_tag :h1, "Get Involved" %>
 </div>
 
 <% content_for(:jquery) do %>
-  $(".bar").animate({
-      height: '+'+((4000-1256.70)/4000)*100+'%'
-    }, 2000);
+  $(".bar").css('height', ((4000-1256.70)/4000)*100+'%');
+    
+  $(".picture").hover(function(){
+    $(".picture img").toggleClass('half_opacity');
+    $(".thermometer, .bar, .appeal h2 .keyword").toggleClass('no_opacity');
+  });
 <% end %>
