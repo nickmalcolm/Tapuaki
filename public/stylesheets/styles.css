@@ -114,6 +114,7 @@ nav li{
 
 nav .checkout{
   padding: 4px 15px 4px 15px;
+  display: none;
 }
 
 nav .checkout img{
@@ -274,4 +275,22 @@ h3{
 
 .supporter img{
   padding: 0px 5px;
+}
+
+#count{
+  color: #fff;
+  position: absolute;
+  z-index: 100;
+}
+
+#count p{
+  margin: 0px;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  text-align: center;
+  font-size: 9px;
+  font-weight: bold;
+  width: 10px;
+  position: relative;
+  top: -2px;
+  left: 11px;
 }
