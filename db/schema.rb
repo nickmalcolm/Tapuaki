@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110905104618) do
+ActiveRecord::Schema.define(:version => 20110905140727) do
 
   create_table "appeals", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(:version => 20110905104618) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "subtitle"
+  end
+
+  create_table "rewards", :force => true do |t|
+    t.integer  "appeal_id"
+    t.decimal  "amount",      :precision => 16, :scale => 2, :default => 0.0
+    t.integer  "limit"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
