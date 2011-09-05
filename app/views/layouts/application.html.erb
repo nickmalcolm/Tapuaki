@@ -39,8 +39,9 @@
         <%= link_to raw("t&acirc;puaki"), root_url, :class=>((request.path.eql? "/") ? nil : "small") %>
       </h1>
     </header>
-    <nav class="grid7 nuvo">
+    <nav class="grid7 nuvo bold">
       <ul>
+        <li class="shadow last rounded checkout"><%= image_tag "cart_32.png" %> Checkout</li>
         <li class="shadow last rounded">Log In</li>
       </ul>
     </nav>
