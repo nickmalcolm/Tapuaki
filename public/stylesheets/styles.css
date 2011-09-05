@@ -220,7 +220,7 @@ h3{
   margin: 10px 0px;
 }
 
-.package:hover{
+.package:hover, .package.selected{
   background-color: #aaa;
   background-color: rgba(255,255,255,0.5);
   cursor: pointer;
