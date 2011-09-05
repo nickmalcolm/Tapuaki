@@ -18,6 +18,10 @@ header {
   height: 120px;
 }
 
+header.small{
+  height: auto;
+}
+
 header, header a{
   color: #73552F;
   text-decoration: none;
@@ -30,6 +34,49 @@ header h1{
   line-height: 77px;
   text-shadow: 0px -2px 1px #542, 0px 4px 5px #fff;
 }
+
+header.small h1{
+  font-size: 50px;
+  line-height: 40px;
+  margin: 20px 0px 5px 0px;
+}
+
+nav ul{
+  margin-top: 55px;
+  float: right;
+}
+
+nav.small ul{
+  margin-top: 30px;
+}
+
+nav li{
+  float: left;
+  background-color: #73552F;
+  color: #fff;
+  padding: 5px 20px 7px 20px;
+  margin: 0px 20px;
+  font-size: 18px;
+  line-height: 18px;
+  text-shadow: 0px -1px 0px #444, 0px 1px 0px #444;
+}
+
+nav a, nav a:hover, nav a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+nav .checkout{
+  padding: 4px 15px 4px 15px;
+  display: none;
+}
+
+nav .checkout img{
+  height:20px;
+  width: 25px;
+  padding-right:3px;
+}
+
 
 footer{
   margin: 50px 0px 10px 0px;
@@ -96,33 +143,6 @@ a.button{
   -webkit-box-shadow: 1px 1px 1px #4a4a4a;
      -moz-box-shadow: 1px 1px 1px #4a4a4a;
           box-shadow: 1px 1px 1px #4a4a4a;
-}
-
-nav ul{
-  margin-top: 55px;
-  float: right;
-}
-
-nav li{
-  float: left;
-  background-color: #73552F;
-  color: #fff;
-  padding: 5px 15px 7px 15px;
-  margin: 0px 10px;
-  font-size: 18px;
-  line-height: 18px;
-  text-shadow: 0px -1px 0px #444, 0px 1px 0px #444;
-}
-
-nav .checkout{
-  padding: 4px 15px 4px 15px;
-  display: none;
-}
-
-nav .checkout img{
-  height:20px;
-  width: 25px;
-  padding-right:3px;
 }
 
 .border{
