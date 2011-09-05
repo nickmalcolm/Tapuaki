@@ -1,4 +1,4 @@
-<div class="slider-container border fullshadow">
+<div class="slider-container featured border fullshadow">
   <div id="slider">
     <% @featured.each do |f| %>
       <div class="slide clearfix">
@@ -18,7 +18,7 @@
             </p>
           </div>
           <div class="act_now">
-            <%= link_to "Get Involved".downcase, f, :class=>"button shadow rounded nuvo_bold" %>
+            <%= link_to "Get Involved".downcase, f, :class=>"button shadow rounded nuvo bold" %>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
 <div class="grid12" style="height:78px">
   <div class="grid2 first">&nbsp;</div>
   <div class="grid8">
-    <%= link_to "Show More Appeals".downcase, "", :class=>"button shadow rounded nuvo_bold", :id=>"show_more" %>
+    <%= link_to "Show More Appeals".downcase, "", :class=>"button shadow rounded nuvo bold", :id=>"show_more" %>
   </div>
 </div>
 
@@ -46,7 +46,7 @@
           <%= appeal.description %>
         </p>
         <div class="">
-          <%= link_to "Get Involved".downcase, appeal, :class=>"nuvo_bold" %>
+          <%= link_to "Get Involved".downcase, appeal, :class=>"nuvo bold" %>
         </div>
       </div>
     <% end %>
@@ -58,18 +58,18 @@
 
 
 <div class="grid6 first">
-  <h2 class="nuvo_bold">What is T&acirc;puaki?</h2>
+  <h2 class="nuvo bold">What is T&acirc;puaki?</h2>
   <p>
-    <span class="nuvo_bold">T&acirc;puaki</span>, Togan for "blessing", lets you fulfil the needs of teachers in the developing world. In return you receive a token of appreciation from those you helped.
+    <span class="nuvo bold">T&acirc;puaki</span>, Togan for "blessing", lets you fulfil the needs of teachers in the developing world. In return you receive a token of appreciation from those you helped.
   </p>
   <p>Charity making a real and tangible impact.
   </p>
   <p>
-    Created to help progress the <%= link_to "United Nations' Millennium Goal of Universal Education", "http://www.un.org/millenniumgoals/education.shtml" %>, <span class="nuvo_bold">T&acirc;puaki</span> aims to ensure that children across the globe have equal access to resources.
+    Created to help progress the <%= link_to "United Nations' Millennium Goal of Universal Education", "http://www.un.org/millenniumgoals/education.shtml" %>, <span class="nuvo bold">T&acirc;puaki</span> aims to ensure that children across the globe have equal access to resources.
   </p>
 </div>
 <div class="grid6 last">
-  <h2 class="nuvo_bold">Stories</h2>
+  <h2 class="nuvo bold">Stories</h2>
   <p>
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque neque lectus, blandit eget accumsan ut, cursus ut quam." - Julie, New Zealand
   </p>
@@ -79,11 +79,11 @@
 </div>
 <div class="grid6">&nbsp;</div>
 <div class="grid3 lone">
-  <%= link_to "Make an Appeal".downcase, new_appeal_path, :class=>"button shadow rounded nuvo_bold" %>
+  <%= link_to "Make an Appeal".downcase, new_appeal_path, :class=>"button shadow rounded nuvo bold" %>
 </div>
 
 <% content_for(:deferred_scripts) do %>
-  <script type="text/javascript" src="javascripts/mylibs/jquery.bxSlider.min.js"></script>
+  <%= javascript_include_tag "mylibs/jquery.bxSlider.min.js" %>
 <% end %>
 
 <% content_for(:jquery) do %>

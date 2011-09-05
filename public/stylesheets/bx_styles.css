@@ -130,12 +130,7 @@
   margin: 10px 0px;
 }
 
-.slide .secondary{
-  color: #ccc;
-  font-style: italic;
-}
-
-.slide{
+.featured .slide{
   overflow: hidden;
   background-color: #333;
   color: #fff;
