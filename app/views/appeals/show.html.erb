@@ -1,7 +1,12 @@
 <div class="appeal">
-  <div class="grid8 first">
   
-    <%= content_tag :h1, @appeal.title %>
+  <div class="grid12 lone title clearfix">
+    <%= content_tag :h1, @appeal.title, :style=>"float:left" %>
+    <%= content_tag :h2, " - #{@appeal.subtitle}", :class=>"subtitle", :style=>"float:left;padding: 2px 10px;" %>
+  </div>
+    
+  <div class="grid8 first">  
+    
     <div class="picture border fullshadow">
       <div class="therfmometer">
         <div class="barf"></div>
@@ -11,23 +16,24 @@
     </div>
   
     <div class="figures grid8 lone">
-      <h3 class="grid2 first">
+      <h2 class="grid2 first">
         <%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span>
-      </h3>
-      <h3 class="grid3" style="text-align: center;">
+      </h2>
+      <h2 class="grid3" style="text-align: center;">
         $1256.70 <span class="keyword">Raised</span>
-      </h3>
-      <h3 class="grid3 last" style="text-align:right">
+      </h2>
+      <h2 class="grid3 last" style="text-align:right">
         365 Days <span class="keyword">Remaining</span>
-      </h3>
+      </h2>
     </div>
     
     <p class="bigger grid8 lone" style="">
      <%= @appeal.description %>
     </p>
     
-    <h3>Supporters</h3>
+    
     <div class="supporters grid8 lone">
+      <h2>Supporters</h2>
       <div id="slider">
         <% 10.times do %>
           <div class="slide supporter">
@@ -43,12 +49,12 @@
       </div>
     </div>
     
-    <h3>Comments</h3>
-    
+    <div class="comments grid8 lone">
+      <h2>Comments</h2>
+    </div>
   </div>
 
   <div class="grid4 last">
-    <%= content_tag :h1, raw("&nbsp;") %>
     <% packages = [{:donation=>"$5", :description=>"Praesent fringilla, diam nec eleifend luctus, sapien lectus malesuada odio, a scelerisque nisl justo eget leo. Fusce sit amet elit sit amet nulla semper egestas sit amet vitae eros.", :supporters => 9, :remaining => nil},
       {:donation=>"$25", :description=>"Aliquam erat volutpat. Aliquam eget varius urna. Praesent gravida turpis non turpis sodales congue. Vestibulum vulputate blandit iaculis.", :supporters => 2, :remaining => 8},
       {:donation=>"$50", :description=>"A copy of the Modest Medusa Season 1 book, signed by myself and my niece Marah. I'll also do a little Medusa sketch on the title page! You'll also receive the previously mentioned reward.", :supporters => 1, :remaining => 4}]%>
@@ -57,10 +63,10 @@
         klass += "top" if (i.eql? 0);
         klass += "bottom"  if (i.eql? packages.count-1) %>
       <div class="<%= klass %>" title="Choose This Reward">
-        <h3>
+        <h2>
           Donate <%= package[:donation] %> or more
           <%= image_tag "add_to_cart_dark.png", :style=>"float: right;height: 40px;display:none"%>
-        </h3>
+        </h2>
         <p class="secondary">
           <%= package[:supporters] %> supporters
           <% if package[:remaining] %>

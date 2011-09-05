@@ -34,12 +34,12 @@
 <body>
 
   <div id="container" class="container12">
-    <header class="grid5 clearfix nuvo">
+    <header class="grid5 clearfix nuvo <%= ((request.path.eql? "/") ? nil : "small") %> ">
       <h1 class="dropshadow">
-        <%= link_to raw("t&acirc;puaki"), root_url, :class=>((request.path.eql? "/") ? nil : "small") %>
+        <%= link_to raw("t&acirc;puaki"), root_url %>
       </h1>
     </header>
-    <nav class="grid7 nuvo bold">
+    <nav class="grid7 nuvo bold <%= ((request.path.eql? "/") ? nil : "small") %>">
       <ul>
         <li class="shadow last rounded checkout">
           <div id="count" class="rounded clearfix">
