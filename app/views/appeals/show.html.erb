@@ -10,8 +10,6 @@
       <%= image_tag @appeal.photo.url(:featured) %>
     </div>
   
-    
-  
     <div class="figures grid8 lone">
       <h3 class="grid2 first">
         <%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span>
@@ -61,7 +59,6 @@
       <div class="<%= klass %>" title="Choose This Reward">
         <h3>
           Donate <%= package[:donation] %> or more
-          <%= image_tag "add_to_cart.png", :style=>"float: right;height: 40px;opacity:0.5"%>
           <%= image_tag "add_to_cart_dark.png", :style=>"float: right;height: 40px;display:none"%>
         </h3>
         <p class="secondary">
@@ -88,14 +85,40 @@
     height: '+60%'
     }, 1000);
     
-    $(".package").hover(function(){
-      $(this).find("img").toggle();
-    });
+  $(".package").hover(function(){
+    if(!$(this).data("incart")){
+      $(this).find("img").toggle(); 
+    }
+  });
+  
+  $(".package").click(function() {
+    var counter = $("#count p");
+  
+    var count = parseInt(counter.html());
+    if(isNaN(count)){
+      count = 0;
+    }
     
-  //$(".picture").hover(function(){
-  //  $(".picture img").toggleClass('half_opacity');
-  //  $(".thermometer, .bar, .appeal h2 .keyword").toggleClass('no_opacity');
-  //});
+    if(!$(this).data("incart")){
+      count++;
+      
+      $(this).find("img").attr("src", "/images/add_to_cart_green.png").show();
+      $(this).data("incart", true);
+    }else{
+      $(this).find("img").attr("src", "/images/add_to_cart_dark.png");
+      count--;
+      $(this).data("incart", false);
+    }
+    if(count > 0){
+      $(".checkout").fadeIn();
+      $("#count").clearQueue().stop();
+      counter.html(count);
+      $("#count").effect("bounce", { times:3, distance:4 }, 300, function(){console.log($(this).attr("style","position:absolute;"))})
+    }else{  
+      counter.html(count);
+      $(".checkout").clearQueue().stop().fadeOut();
+    }
+  });
   
   $('#slider').bxSlider({
     auto: true,
