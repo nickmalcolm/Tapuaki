@@ -61,6 +61,7 @@
       <div class="<%= klass %>">
         <h3>
           Donate <%= package[:donation] %> or more
+          <%= image_tag "add_to_cart_dark.png", :style=>"float: right;height: 40px;display:none"%>
         </h3>
         <p class="secondary">
           <%= package[:supporters] %> supporters
@@ -85,6 +86,10 @@
   $(".bar").animate(function(){
     height: '+60%'
     }, 1000);
+    
+    $(".package").hover(function(){
+      $(this).find("img").toggle();
+    });
     
   //$(".picture").hover(function(){
   //  $(".picture img").toggleClass('half_opacity');
