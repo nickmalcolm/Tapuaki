@@ -33,7 +33,7 @@
     
     
     <div class="supporters grid8 lone">
-      <h2>Supporters</h2>
+      <h2>4 Supporters</h2>
       <div id="slider">
         <div class="slide supporter">
           <%= image_tag "profile.png" %>
@@ -80,26 +80,23 @@
   </div>
 
   <div class="grid4 last">
-    <% packages = [{:donation=>"$5", :description=>"Praesent fringilla, diam nec eleifend luctus, sapien lectus malesuada odio, a scelerisque nisl justo eget leo. Fusce sit amet elit sit amet nulla semper egestas sit amet vitae eros.", :supporters => 9, :remaining => nil},
-      {:donation=>"$25", :description=>"Aliquam erat volutpat. Aliquam eget varius urna. Praesent gravida turpis non turpis sodales congue. Vestibulum vulputate blandit iaculis.", :supporters => 2, :remaining => 8},
-      {:donation=>"$50", :description=>"A copy of the Modest Medusa Season 1 book, signed by myself and my niece Marah. I'll also do a little Medusa sketch on the title page! You'll also receive the previously mentioned reward.", :supporters => 1, :remaining => 4}]%>
-    <% packages.each_with_index do |package, i| %>
+    <% @appeal.rewards.each_with_index do |reward, i| %>
     <% klass = "package clearfix ";
         klass += "top" if (i.eql? 0);
-        klass += "bottom"  if (i.eql? packages.count-1) %>
+        klass += "bottom"  if (i.eql? @appeal.rewards.count-1) %>
       <div class="<%= klass %>" title="Choose This Reward">
         <h2>
-          Donate <%= package[:donation] %> or more
+          Donate <%= number_to_currency reward.amount %> or more
           <%= image_tag "add_to_cart_dark.png", :style=>"float: right;height: 40px;display:none"%>
         </h2>
         <p class="secondary">
-          <%= package[:supporters] %> supporters
-          <% if package[:remaining] %>
+          X supporters
+          <% if reward.limit %>
             &nbsp;|&nbsp;
-            <%= package[:remaining] %> rewards remaining
+            <%= reward.limit %> rewards remaining
           <% end %>
         </p>
-        <%= content_tag :p, package[:description] %>
+        <%= content_tag :p, reward.description %>
       </div>
     <% end %>
   </div>
