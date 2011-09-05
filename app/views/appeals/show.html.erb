@@ -12,14 +12,14 @@
   
     
   
-    <div class="figures grid8 lone" style="">
-      <h3 style="float: left;width: 33%">
+    <div class="figures grid8 lone">
+      <h3 class="grid2 first">
         <%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span>
       </h3>
-      <h3 style="float: left;width: 33%">
+      <h3 class="grid3" style="text-align: center;">
         $1256.70 <span class="keyword">Raised</span>
       </h3>
-      <h3 style="float: left;width: 34%;text-align:right">
+      <h3 class="grid3 last" style="text-align:right">
         365 Days <span class="keyword">Remaining</span>
       </h3>
     </div>
@@ -58,9 +58,10 @@
     <% klass = "package clearfix ";
         klass += "top" if (i.eql? 0);
         klass += "bottom"  if (i.eql? packages.count-1) %>
-      <div class="<%= klass %>">
+      <div class="<%= klass %>" title="Choose This Reward">
         <h3>
           Donate <%= package[:donation] %> or more
+          <%= image_tag "add_to_cart.png", :style=>"float: right;height: 40px;opacity:0.5"%>
           <%= image_tag "add_to_cart_dark.png", :style=>"float: right;height: 40px;display:none"%>
         </h3>
         <p class="secondary">
