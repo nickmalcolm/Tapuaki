@@ -41,12 +41,21 @@
     </header>
     <nav class="grid7 nuvo bold <%= ((request.path.eql? "/") ? nil : "small") %>">
       <ul>
+        
         <li class="shadow last rounded checkout">
           <div id="count" class="rounded clearfix">
             <p>
             </p>
           </div>
-          <%= image_tag "cart_32.png" %> Checkout</li>
+          <%= image_tag "cart_32.png" %> Checkout
+        </li>
+        
+        <% if (!request.path.eql? "/") %>
+          <li class="shadow last rounded">
+            <%= link_to raw("All&nbsp;&nbsp;Appeals"), appeals_path %>
+          </li>
+        <% end %>
+        
         <li class="shadow last rounded">Log In</li>
       </ul>
     </nav>
