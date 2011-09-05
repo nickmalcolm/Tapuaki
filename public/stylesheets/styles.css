@@ -53,8 +53,10 @@ span.nuvo.bold{
 }
 
 h2{
-  font-size: 240%;
   font-weight: 800;
+}
+h2.nuvo{
+  font-size: 240%
 }
 
 .slide h2{
@@ -186,7 +188,7 @@ nav .checkout img{
 }
 
 .picture{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .picture img{
@@ -210,7 +212,7 @@ nav .checkout img{
 }
 
 p.bigger{
-  margin: 20px 0px;
+  margin: 10px 0px;
   font-size: 18px;
   line-height: 24px;
 }
@@ -245,7 +247,7 @@ h3{
   border-bottom: 0px;
 }
 
-.package h3{
+.package h2{
   margin: 0px;
 }
 
