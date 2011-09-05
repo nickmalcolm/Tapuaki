@@ -3,30 +3,47 @@
   
     <%= content_tag :h1, @appeal.title %>
     <div class="picture border fullshadow">
-      <div class="thermometer">
-        <div class="bar"></div>
-      </div>
-  
-      <div class="figures">
-        <h2>
-          <%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span>
-        </h2>
-        <h2>
-          $1256.70 <span class="keyword">Raised</span>
-        </h2>
-        <h2>
-          35 Days <span class="keyword">Remaining</span>
-        </h2>
+      <div class="therfmometer">
+        <div class="barf"></div>
       </div>
       
       <%= image_tag @appeal.photo.url(:featured) %>
     </div>
   
-    <p class="bigger">
+    
+  
+    <div class="figures grid8 lone" style="">
+      <h3 style="float: left;width: 33%">
+        <%= "#{(((4000-1256.70)/4000)*100).floor}%" %><span class="keyword"> Funded</span>
+      </h3>
+      <h3 style="float: left;width: 33%">
+        $1256.70 <span class="keyword">Raised</span>
+      </h3>
+      <h3 style="float: left;width: 34%;text-align:right">
+        365 Days <span class="keyword">Remaining</span>
+      </h3>
+    </div>
+    
+    <p class="bigger grid8 lone" style="">
      <%= @appeal.description %>
     </p>
     
     <h3>Supporters</h3>
+    <div class="supporters grid8 lone">
+      <div id="slider">
+        <% 10.times do %>
+          <div class="slide supporter">
+            <%= image_tag "profile.png" %>
+            <p>
+              <strong>Louise Buffoon</strong><br />
+              <span class="secondary">
+              donated $40
+              </span>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
     
     <h3>Comments</h3>
     
@@ -45,11 +62,11 @@
         <h3>
           Donate <%= package[:donation] %> or more
         </h3>
-        <p>
+        <p class="secondary">
           <%= package[:supporters] %> supporters
           <% if package[:remaining] %>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= package[:remaining] %> remaining
+            &nbsp;|&nbsp;
+            <%= package[:remaining] %> rewards remaining
           <% end %>
         </p>
         <%= content_tag :p, package[:description] %>
@@ -59,11 +76,22 @@
 
 </div>
 
+
+<% content_for(:deferred_scripts) do %>
+  <%= javascript_include_tag "mylibs/jquery.bxSlider.min.js" %>
+<% end %>
+
 <% content_for(:jquery) do %>
-  $(".bar").css('height', ((4000-1256.70)/4000)*100+'%');
+  $(".bar").animate(function(){
+    height: '+60%'
+    }, 1000);
     
-  $(".picture").hover(function(){
-    $(".picture img").toggleClass('half_opacity');
-    $(".thermometer, .bar, .appeal h2 .keyword").toggleClass('no_opacity');
+  //$(".picture").hover(function(){
+  //  $(".picture img").toggleClass('half_opacity');
+  //  $(".thermometer, .bar, .appeal h2 .keyword").toggleClass('no_opacity');
+  //});
+  
+  $('#slider').bxSlider({
+    auto: true
   });
 <% end %>
