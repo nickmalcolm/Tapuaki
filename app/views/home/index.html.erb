@@ -11,7 +11,7 @@
               <%= truncate f.title.upcase, :length => 25 %>
             </h2>
             <h3 class="secondary">
-              Subtitle
+              <%= truncate f.subtitle, :length => 25 %>
             </h3>
             <p>
               <%= truncate f.description, :length => 190, :separator => ' ' %>
