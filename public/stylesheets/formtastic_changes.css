@@ -1,0 +1,22 @@
+form.formtastic fieldset {
+  overflow: hidden;
+}
+
+form.formtastic fieldset > ol > li {
+    overflow: hidden;
+}
+
+form.formtastic input.button{
+  font-family: ff-nuvo-sc-web-pro, sans-serif;
+  font-weight: 700;
+  border: none;
+  background-color: #99cc33;
+  padding: 0px 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+form.formtastic fieldset.buttons{
+ padding-left: 0px;
+ margin-bottom: 20px; 
+}
