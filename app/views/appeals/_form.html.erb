@@ -1,33 +1,23 @@
-<%= form_for @appeal, :html => { :multipart => true } do |f| %>
-  <% if @appeal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@appeal.errors.count, "error") %> prohibited this appeal from being saved:</h2>
+<% if @appeal.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@appeal.errors.count, "error") %> prohibited this appeal from being saved:</h2>
 
-      <ul>
-      <% @appeal.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+    <ul>
+    <% @appeal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= semantic_form_for @appeal, :html => { :multipart => true, :class=>"grid8 suffix4 lone"} do |f| %>
+  <%= f.inputs do %>
+    <h2 class="nuvo">What do you need?</h2>
+    <%= f.input :title, :label => false %>
+    <h2 class="nuvo">Tell Us More:</h2>
+    <%= f.input :description, :label => false %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :subtitle %><br />
-    <%= f.text_field :subtitle %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.buttons do %>
+    <%= f.submit :class=>"button nuvo rounded" %>
+  <% end %>
 <% end %>
