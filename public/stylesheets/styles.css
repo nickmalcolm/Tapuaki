@@ -20,6 +20,7 @@ header {
 
 header.small{
   height: auto;
+  margin: 10px 0px 10px 10px
 }
 
 header, header a{
@@ -47,7 +48,7 @@ nav ul{
 }
 
 nav.small ul{
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 nav li{
