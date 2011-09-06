@@ -316,3 +316,16 @@ h3{
   top: -2px;
   left: 11px;
 }
+
+.tooltips section{
+  display: none;
+  background-color: #444;
+  background-color: rgba(0,0,0,0.75);
+}
+
+.tooltips p {
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+  padding: 10px;
+}

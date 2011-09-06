@@ -10,14 +10,42 @@
   </div>
 <% end %>
 
-<%= semantic_form_for @appeal, :html => { :multipart => true, :class=>"grid8 suffix4 lone"} do |f| %>
-  <%= f.inputs do %>
-    <h2 class="nuvo">What do you need?</h2>
-    <%= f.input :title, :label => false %>
-    <h2 class="nuvo">Tell Us More:</h2>
-    <%= f.input :description, :label => false %>
+<div class="grid12 lone">
+  <%= semantic_form_for @appeal, :html => { :multipart => true, :class=>"grid8 first"} do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :title, :label => "What do you need?", :input_html => {:class=>"grid4"} %>
+      <%= f.input :target_amount, :label => "How much will it cost?", :input_html => {:class=>"grid4"} %>
+      <%= f.input :description, :label => "Tell us more", :input_html => {:class=>"grid8 lone"} %>
+    <% end %>
+    <%= f.buttons do %>
+      <%= f.submit :class=>"button nuvo rounded" %>
+    <% end %>
   <% end %>
-  <%= f.buttons do %>
-    <%= f.submit :class=>"button nuvo rounded" %>
-  <% end %>
+
+  <div class="grid4 last tooltips">
+    <section id="appeal_title_input_tooltip" style="position:relative;top:0px;">
+      <p>
+        Write a short title describing what you need, e.g. Art and Craft Supplies
+      </p>
+    </section>
+    <section id="appeal_target_amount_input_tooltip" style="position:relative;top:80px;" >
+      <p>
+        How much will it cost, in New Zealand Dollars, to buy what you need?
+      </p>
+    </section>
+    <section id="appeal_description_input_tooltip" style="position:relative;top:180px;" >
+      <p>
+        Tell donors about the problem you face, the children and communities which will benefit from this appeal, and anything else you can think of.
+      </p>
+    </section>
+  </div>
+</div>
+
+<%= content_for(:jquery) do %>
+  $("fieldset.inputs li").hover(function(){
+    $(".tooltips section").hide();
+    $("#"+$(this).attr("id")+"_tooltip").fadeIn();
+  }, function(){
+    $("#"+$(this).attr("id")+"_tooltip").fadeOut();
+  })
 <% end %>
