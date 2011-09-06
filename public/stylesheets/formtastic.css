@@ -77,13 +77,13 @@ form.formtastic fieldset > ol > li ul.errors li { padding:0; border:none; displa
 
 /* STRING, NUMERIC, PASSWORD, EMAIL, URL, PHONE & SEARCH OVERRIDES
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li.string input, 
+/*form.formtastic fieldset > ol > li.string input, 
 form.formtastic fieldset > ol > li.password input, 
 form.formtastic fieldset > ol > li.numeric input,
 form.formtastic fieldset > ol > li.email input,
 form.formtastic fieldset > ol > li.url input,
 form.formtastic fieldset > ol > li.phone input,
-form.formtastic fieldset > ol > li.search input { width:72%; }
+form.formtastic fieldset > ol > li.search input { width:72%; }*/
 
 form.formtastic fieldset > ol > li.string input[size], 
 form.formtastic fieldset > ol > li.password input[size], 

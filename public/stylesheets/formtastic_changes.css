@@ -6,6 +6,10 @@ form.formtastic fieldset > ol > li {
     overflow: hidden;
 }
 
+form.formtastic fieldset.inputs{
+  font-size: 14px;
+}
+
 form.formtastic input.button{
   font-family: ff-nuvo-sc-web-pro, sans-serif;
   font-weight: 700;
@@ -18,5 +22,18 @@ form.formtastic input.button{
 
 form.formtastic fieldset.buttons{
  padding-left: 0px;
- margin-bottom: 20px; 
+ margin: 20px 0px; 
+}
+
+form.formtastic fieldset > ol > li label{
+  font-family: ff-nuvo-sc-web-pro, sans-serif;
+  font-weight: 800;
+  width: 100%;
+  font-size: 240%;
+  margin: 20px 0px;
+}
+
+form.formtastic fieldset > ol > li {
+  margin: 0px;
+  padding: 0px;
 }
