@@ -44,8 +44,8 @@
 <%= content_for(:jquery) do %>
   $("fieldset.inputs li").hover(function(){
     $(".tooltips section").hide();
-    $("#"+$(this).attr("id")+"_tooltip").fadeIn();
+    $("#"+$(this).attr("id")+"_tooltip").fadeIn(1000);
   }, function(){
-    $("#"+$(this).attr("id")+"_tooltip").fadeOut();
+    $("#"+$(this).attr("id")+"_tooltip").fadeOut(1000);
   })
 <% end %>
