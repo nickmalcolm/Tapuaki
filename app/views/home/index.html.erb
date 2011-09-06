@@ -56,30 +56,37 @@
   </div>
 </div>
 
-
-<div class="grid6 first">
-  <h2 class="nuvo bold">What is T&acirc;puaki?</h2>
-  <p>
-    <span class="nuvo bold">T&acirc;puaki</span>, Togan for "blessing", lets you fulfil the needs of teachers in the developing world. In return you receive a token of appreciation from those you helped.
-  </p>
-  <p>Charity making a real and tangible impact.
-  </p>
-  <p>
-    Created to help progress the <%= link_to "United Nations' Millennium Goal of Universal Education", "http://www.un.org/millenniumgoals/education.shtml" %>, <span class="nuvo bold">T&acirc;puaki</span> aims to ensure that children across the globe have equal access to resources.
-  </p>
+<div class="grid12 lone">
+  <div class="grid6 first">
+    <h2 class="nuvo bold">What is T&acirc;puaki?</h2>
+    <p>
+      <span class="nuvo bold">T&acirc;puaki</span>, Togan for "blessing", lets you fulfil the needs of teachers in the developing world. In return you receive a token of appreciation from those you helped.
+    </p>
+    <p>Charity making a real and tangible impact.
+    </p>
+    <p>
+      Created to help progress the <%= link_to "United Nations' Millennium Goal of Universal Education", "http://www.un.org/millenniumgoals/education.shtml" %>, <span class="nuvo bold">T&acirc;puaki</span> aims to ensure that children across the globe have equal access to resources.
+    </p>
+  </div>
+  <div class="grid6 last">
+    <h2 class="nuvo bold">Stories</h2>
+    <p>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque neque lectus, blandit eget accumsan ut, cursus ut quam." - Julie, New Zealand
+    </p>
+    <p>"Ut blandit tristique mi vulputate fringilla. Maecenas non lorem id dolor ornare adipiscing. Donec fermentum vestibulum lacus non euismod." -  Anne, Vanuatu</p>
+    <p>"Nulla vestibulum mi ligula." - File, Samoa
+    </p>
+  </div>
 </div>
-<div class="grid6 last">
-  <h2 class="nuvo bold">Stories</h2>
-  <p>
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque neque lectus, blandit eget accumsan ut, cursus ut quam." - Julie, New Zealand
-  </p>
-  <p>"Ut blandit tristique mi vulputate fringilla. Maecenas non lorem id dolor ornare adipiscing. Donec fermentum vestibulum lacus non euismod." -  Anne, Vanuatu</p>
-  <p>"Nulla vestibulum mi ligula." - File, Samoa
-  </p>
-</div>
-<div class="grid6">&nbsp;</div>
-<div class="grid3 lone">
-  <%= link_to "Make an Appeal".downcase, new_appeal_path, :class=>"button shadow rounded nuvo bold" %>
+<div class="grid12 lone">
+  <div class="grid6 first">
+    <h2 class="nuvo bold">Can we help you?</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque neque lectus, blandit eget accumsan ut, cursus ut quam. Ut blandit tristique mi vulputate fringilla. Maecenas non lorem id dolor ornare adipiscing. Donec fermentum vestibulum lacus non euismod.
+    </p>
+    <div class="grid6 lone">
+      <%= link_to "Make an Appeal".downcase, new_appeal_path, :class=>"button shadow rounded nuvo bold" %>
+    </div>
+  </div>
 </div>
 
 <% content_for(:deferred_scripts) do %>
@@ -98,12 +105,8 @@
       $(".bx-prev, .bx-next").fadeOut();
     });
     $("#show_more").click(function(){
-      $(this).parent().parent().animate({
-          opacity: 0.0,
-          height: '0px',
-          margin: '0px'
-        }, 500);
-      $("#more_appeals").fadeIn();
+      $(this).parent().parent().attr("style","height:0px;overflow:show;").fadeOut();
+      $("#more_appeals").fadeIn(1000);
       return false;
       
     })

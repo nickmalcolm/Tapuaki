@@ -50,11 +50,13 @@
           <%= image_tag "cart_32.png" %> Checkout
         </li>
         
-        <% if (!request.path.eql? "/") %>
-          <li class="shadow last rounded">
-            <%= link_to raw("All&nbsp;&nbsp;Appeals"), appeals_path %>
-          </li>
-        <% end %>
+        <li class="shadow last rounded">
+          <%= link_to raw("All&nbsp;&nbsp;Appeals"), appeals_path %>
+        </li>
+        
+        <li class="shadow last rounded">
+          <%= link_to raw("Make an Appeal"), new_appeal_path %>
+        </li>
       </ul>
     </nav>
     <div id="main" role="main" class="grid12">
