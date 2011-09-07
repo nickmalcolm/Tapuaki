@@ -42,12 +42,13 @@
     <nav class="grid7 nuvo bold <%= ((request.path.eql? "/") ? nil : "small") %>">
       <ul>
         
-        <li class="shadow last rounded checkout">
+        <li class="shadow last rounded checkout" <%= raw("style=\"display:block;\"") unless cookies[:cart].blank? %>>
           <div id="count" class="rounded clearfix">
             <p>
+              <%= cookies[:cart].split(",").count unless cookies[:cart].blank? %>
             </p>
           </div>
-          <%= image_tag "cart_32.png" %> Checkout
+          <%= image_tag "cart.png" %> Checkout
         </li>
         
         <li class="shadow last rounded">
@@ -70,8 +71,7 @@
   <!--
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.6.2.min.js"><\/script>')</script>//-->
-  <%= javascript_include_tag("libs/jquery-1.6.2.min") %>
-  <%= javascript_include_tag("libs/jquery-ui-1.8.16.custom.min") %>
+  <%= javascript_include_tag "libs/jquery-1.6.2.min", "libs/jquery-ui-1.8.16.custom.min", "libs/rails.js", "mylibs/jquery.cookies.js" %>
   <%= content_for(:deferred_scripts) %>
 
   <script>

@@ -83,11 +83,13 @@
     <% @appeal.rewards.order(:amount).each_with_index do |reward, i| %>
     <% klass = "package clearfix ";
         klass += "top" if (i.eql? 0);
-        klass += "bottom"  if (i.eql? @appeal.rewards.count-1) %>
-      <div class="<%= klass %>" title="Choose This Reward">
+        klass += "bottom"  if (i.eql? @appeal.rewards.count-1);
+        selected = (cookies[:cart].split(",").include? reward.id.to_s);
+        p selected;
+        klass += " selected" if selected %>
+      <div class="<%= klass %>" title="Add this to your cart" data-url="<%= reward_toggle_in_cart_path(reward) %>" data-number="<% reward.id %>">
         <h2>
           Donate <%= number_to_currency reward.amount %> or more
-          <%= image_tag "add_to_cart_dark.png", :style=>"float: right;height: 40px;display:none"%>
         </h2>
         <p class="secondary">
           X supporters
@@ -109,6 +111,8 @@
 <% end %>
 
 <% content_for(:jquery) do %>
+  
+
   $(".bar").animate(function(){
     height: '+60%'
     }, 1000);
@@ -119,36 +123,48 @@
     }
   });
   
+  cart = [];
+  function refreshCart(){
+    cookie = $.cookie('cart');
+    cart = []
+    
+    if (cookie.length > 0)
+      cart = $.cookie('cart').split(",");
+  }
+  
   $(".package").click(function() {
-    $(this).toggleClass("selected");
+    var p = $(this);
     
-    var counter = $("#count p");
+    $.ajax({
+      url: $(this).attr("data-url"),
+      cache: false,
+      success: function(html){
+        
+        refreshCart();
+        
+        
+        p.toggleClass("selected");
+        
+        $(".checkout").fadeIn();
+        $("#count").clearQueue().stop();
+        $("#count p").html(cart.length);
+        $("#count").effect("bounce", { times:3, distance:10 }, 300)
+        
+        if (p.hasClass("selected")){
+          p.attr("title", "Remove this from your cart");
+          p.animate({
+              background-color: '#9c3',
+              opacity: '0.9'
+          }, 1000, {
+              background-color: '#f00',
+              opacity: '1'
+          });
+        }else{
+          p.attr("title", "Add this to your cart");
+        }
+      }
+    });
     
-    var count = parseInt(counter.html());
-    if(isNaN(count)){
-      count = 0;
-    }
-    
-    if(!$(this).data("incart")){
-      count++;
-      
-      $(this).find("img").attr("src", "/images/in_cart.png").show();
-      $(this).attr("title", "Remove this reward from your cart");
-      $(this).data("incart", true);
-    }else{
-      $(this).find("img").attr("src", "/images/add_to_cart_dark.png");
-      $(this).attr("title", "Choose this reward");
-      count--;
-      $(this).data("incart", false);
-    }
-    if(count > 0){
-      $(".checkout").fadeIn();
-      $("#count").clearQueue().stop();
-      counter.html(count);
-      $("#count").effect("bounce", { times:3, distance:10 }, 300, function(){console.log($(this).attr("style","position:absolute;"))})
-    }else{  
-      counter.html(count);
-    }
   });
   
   $('#slider').bxSlider({

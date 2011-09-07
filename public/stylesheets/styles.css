@@ -8,7 +8,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: #ededed;
-  background: url("../images/white_texture.png") repeat;**/
+  background: url("../images/white_texture.png") repeat;
   font-size: 14px;
   line-height: 18px;
   color: #444;
@@ -248,10 +248,22 @@ h3{
   margin: 10px 0px;
 }
 
+
 .package:hover, .package.selected{
   background-color: #aaa;
-  background-color: rgba(255,255,255,0.5);
   cursor: pointer;
+}
+
+.package.selected{
+  background: rgba(255,255,255,0.5) url("../images/in_cart.png") no-repeat top right;
+}
+
+.package:hover{
+  background: rgba(255,255,255,0.5) url("../images/add_to_cart.png") no-repeat top right;
+}
+
+.package.selected:hover{
+  background: rgba(255,255,255,0.5) url("../images/remove_from_cart.png") no-repeat top right;
 }
 
 .package .keyword{
