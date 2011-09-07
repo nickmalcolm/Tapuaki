@@ -19,7 +19,7 @@
         <%= f.input :description, :label => "Tell us more", :input_html => {:class=>"grid8 lone"} %>
       </div>
       <div class="rewards">
-        <%= f.semantic_fields_for :rewards, :class=>"rewards" do |rewards| %>
+        <%= f.semantic_fields_for :rewards, @appeal.rewards.order(:amount), :class=>"rewards" do |rewards| %>
           <%= render "reward_fields", :f => rewards %>
         <% end %>
         <%= link_to_add_fields "Add Another Reward", f, :rewards %>

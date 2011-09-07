@@ -80,7 +80,7 @@
   </div>
 
   <div class="grid4 last">
-    <% @appeal.rewards.each_with_index do |reward, i| %>
+    <% @appeal.rewards.order(:amount).each_with_index do |reward, i| %>
     <% klass = "package clearfix ";
         klass += "top" if (i.eql? 0);
         klass += "bottom"  if (i.eql? @appeal.rewards.count-1) %>
