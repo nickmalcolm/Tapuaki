@@ -13,9 +13,17 @@
 <div class="grid12 lone">
   <%= semantic_form_for @appeal, :html => { :multipart => true, :class=>"grid8 first"} do |f| %>
     <%= f.inputs do %>
-      <%= f.input :title, :label => "What do you need?", :input_html => {:class=>"grid4"} %>
-      <%= f.input :target_amount, :label => "How much will it cost?", :input_html => {:class=>"grid4"} %>
-      <%= f.input :description, :label => "Tell us more", :input_html => {:class=>"grid8 lone"} %>
+      <div class="details" style="display:none">
+        <%= f.input :title, :label => "What do you need?", :input_html => {:class=>"grid4"} %>
+        <%= f.input :target_amount, :label => "How much will it cost?", :input_html => {:class=>"grid4"} %>
+        <%= f.input :description, :label => "Tell us more", :input_html => {:class=>"grid8 lone"} %>
+      </div>
+      <div class="rewards">
+        <%= f.semantic_fields_for :rewards, :class=>"rewards" do |rewards| %>
+          <%= render "reward_fields", :f => rewards %>
+        <% end %>
+        <%= link_to_add_fields "Add Another Reward", f, :rewards %>
+      </div>
     <% end %>
     <%= f.buttons do %>
       <%= f.submit :class=>"button nuvo rounded" %>
@@ -49,3 +57,16 @@
     $("#"+$(this).attr("id")+"_tooltip").fadeOut(1000);
   })
 <% end %>
+<script>
+  function remove_fields(link) {
+    $(link).prev("input[type=hidden]").val("1");
+    $(link).closest("fieldset").animate({ height: 0, opacity: 0 }, 'slow');
+  }
+
+  function add_fields(link, association, content) {
+    var new_id = new Date().getTime();
+    var regexp = new RegExp("new_" + association, "g");
+    content = content.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"");
+    $(link).before(content.replace(regexp, new_id));
+  }
+</script>
