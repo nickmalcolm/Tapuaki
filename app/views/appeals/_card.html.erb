@@ -1,0 +1,7 @@
+<div class="card rounded">
+  <%= link_to (image_tag appeal.photo(:small)), appeal %>
+  <%= content_tag :h4, (link_to appeal.title, appeal), :class => "title nuvo bold" %>
+  <p>
+    <%= appeal.description %>
+  </p>
+</div>
