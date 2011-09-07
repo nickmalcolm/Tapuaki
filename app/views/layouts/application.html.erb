@@ -48,7 +48,9 @@
               <%= cookies[:cart].split(",").count unless cookies[:cart].blank? %>
             </p>
           </div>
-          <%= image_tag "cart.png" %> Checkout
+          <%= content_tag :a, :href => cart_path do %>
+            <%= image_tag "cart.png" %> Checkout
+          <% end %>
         </li>
         
         <li class="shadow last rounded">
