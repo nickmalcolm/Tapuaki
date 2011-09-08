@@ -121,7 +121,7 @@ p .nuvo_bold{
 }
 
 .secondary{
-  color: #666;
+  color: #aaa;
 }
 
 .rounded{
@@ -266,6 +266,12 @@ h3{
   background: rgba(255,255,255,0.5) url("../images/remove_from_cart.png") no-repeat top right;
 }
 
+.package.cart, .package.cart:hover{
+  background-image: none;
+  cursor: default;
+  margin-bottom:20px;
+}
+
 .package .keyword{
   font-weight: 800;
   font-size: 120%;
@@ -346,4 +352,13 @@ h3{
   line-height: 25px;
   color: #fff;
   padding: 10px;
+}
+
+.button.small{
+  font-size: 18px;
+  padding: 3px 0px 9px 0px;
+}
+
+a.destroy{
+  color: #d33;
 }

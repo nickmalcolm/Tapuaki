@@ -13,20 +13,22 @@
 <div class="grid12 lone">
   <%= semantic_form_for @appeal, :html => { :multipart => true, :class=>"grid8 first"} do |f| %>
     <%= f.inputs do %>
-      <div class="details" style="display:none">
+      <div class="details grid12 lone">
         <%= f.input :title, :label => "What do you need?", :input_html => {:class=>"grid4"} %>
         <%= f.input :target_amount, :label => "How much will it cost?", :input_html => {:class=>"grid4"} %>
-        <%= f.input :description, :label => "Tell us more", :input_html => {:class=>"grid8 lone"} %>
+        <%= f.input :description, :label => "Tell us more", :input_html => {:class=>"grid8 lone", :rows => 10} %>
       </div>
-      <div class="rewards">
-        <%= f.semantic_fields_for :rewards, @appeal.rewards.order(:amount), :class=>"rewards" do |rewards| %>
+      <div class="rewards grid8 first">
+        <h3 class="nuvo bold">What can you offer in return?</h3>
+        <%= f.semantic_fields_for :rewards, @rewards, :class=>"rewards" do |rewards| %>
           <%= render "reward_fields", :f => rewards %>
         <% end %>
-        <%= link_to_add_fields "Add Another Reward", f, :rewards %>
+          <%= link_to_add_fields "Add Another Reward", f, :rewards, "button nuvo rounded grid4 small bold first" %>
+        </a>
       </div>
     <% end %>
     <%= f.buttons do %>
-      <%= f.submit :class=>"button nuvo rounded" %>
+      <%= f.submit :class=>"button nuvo rounded bold grid4" %>
     <% end %>
   <% end %>
 
@@ -41,9 +43,17 @@
         How much will it cost, in New Zealand Dollars, to buy what you need?
       </p>
     </section>
-    <section id="appeal_description_input_tooltip" style="position:relative;top:180px;" >
+    <section id="appeal_description_input_tooltip" style="position:relative;top:240px;" >
       <p>
         Tell donors about the problem you face, the children and communities which will benefit from this appeal, and anything else you can think of.
+      </p>
+    </section>
+    <section id="rewards_tooltip" style="position:relative;top:450px;" >
+      <p>
+        What can you offer to to people who donate to you? It doesn't have to be very big, and you should only offer what you can reasonably give.
+      </p>
+      <p>
+      e.g. "Donate $25 or more and you will get a postcard from one of my students telling you about how your gift has helped them at school."
       </p>
     </section>
   </div>
@@ -55,12 +65,17 @@
     $("#"+$(this).attr("id")+"_tooltip").fadeIn(1000);
   }, function(){
     $("#"+$(this).attr("id")+"_tooltip").fadeOut(1000);
-  })
+  });
+  $(".rewards").hover(function(){
+    $("#rewards_tooltip").fadeIn(1000);
+  }, function(){
+    $("#rewards_tooltip").fadeOut(1000);
+  });
 <% end %>
 <script>
   function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest("fieldset").animate({ height: 0, opacity: 0 }, 'slow');
+    $(link).closest(".grid4").animate({ height: 0, opacity: 0 }, 'slow');
   }
 
   function add_fields(link, association, content) {

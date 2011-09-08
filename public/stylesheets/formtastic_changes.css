@@ -12,28 +12,52 @@ form.formtastic fieldset.inputs{
 
 form.formtastic input.button{
   font-family: ff-nuvo-sc-web-pro, sans-serif;
-  font-weight: 700;
   border: none;
   background-color: #99cc33;
-  padding: 0px 15px;
+  padding: 0 15px;
   font-size: 18px;
   color: #fff;
+  text-shadow: 1px 1px 0 #888;
 }
 
 form.formtastic fieldset.buttons{
- padding-left: 0px;
- margin: 20px 0px; 
+ padding-left: 0;
+ margin: 20px 0; 
 }
 
-form.formtastic fieldset > ol > li label{
+form.formtastic fieldset > ol > li label, form.formtastic label {
   font-family: ff-nuvo-sc-web-pro, sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   width: 100%;
-  font-size: 240%;
-  margin: 20px 0px;
+  font-size: 180%;
+  margin: 20px 0;
+  float: left;
+}
+
+form.formtastic span{
+  font-family: ff-nuvo-sc-web-pro, sans-serif;
+  font-weight: 700;
+  font-size: 180%;
+  margin: 20px 0;
+  float: left;
+}
+
+form.formtastic .money span{
+  margin: 0;
+}
+
+form.formtastic .rewards input.money{
+  float: left;
+  width: 10px;
 }
 
 form.formtastic fieldset > ol > li {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, 
+form.formtastic fieldset, form.formtastic legend, form.formtastic input, 
+form.formtastic textarea, form.formtastic select, form.formtastic p{
+  margin: 0 0 10px 0;
 }

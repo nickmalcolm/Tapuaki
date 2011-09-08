@@ -84,7 +84,7 @@
     <% klass = "package clearfix ";
         klass += "top" if (i.eql? 0);
         klass += "bottom"  if (i.eql? @appeal.rewards.count-1);
-        selected = (cookies[:cart].split(",").include? reward.id.to_s);
+        selected = (cookies[:cart].split(",").include? reward.id.to_s) unless cookies[:cart].nil?;
         p selected;
         klass += " selected" if selected %>
       <div class="<%= klass %>" title="Add this to your cart" data-url="<%= reward_toggle_in_cart_path(reward) %>" data-number="<% reward.id %>">

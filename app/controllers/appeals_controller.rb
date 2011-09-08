@@ -25,7 +25,7 @@ class AppealsController < ApplicationController
   # GET /appeals/new.xml
   def new
     @appeal = Appeal.new
-    @rewards = 3.times {@appeal.questions.build}
+    @rewards = 2.times {@appeal.rewards.build}
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @appeal }
@@ -35,7 +35,7 @@ class AppealsController < ApplicationController
   # GET /appeals/1/edit
   def edit
     @appeal = Appeal.find(params[:id])
-    @rewards = @appeal.rewards
+    @rewards = @appeal.rewards.order(:amount)
   end
 
   # POST /appeals

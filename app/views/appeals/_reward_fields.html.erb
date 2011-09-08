@@ -1,5 +1,15 @@
-<%= f.inputs do %>
-  <%= f.input :amount %>
-  <%= f.input :description %>
-  <%= link_to_remove_fields "Remove Reward", f %>
-<% end %>
+<div class="grid4 first">
+  <div class="package first cart selected">
+  <%= f.inputs do %>
+    <div class="money" style="display:block;height: 80px; width: 250px">
+      <span>If you donate $</span>
+      <%= text_field_tag :amount, "", :style => "width: 60px" %>
+      <span> or more, you'll get:</span>
+    </div>
+    <div class="height: 120px;">
+    <%= f.input :description, :label => false, :input_html=>{:cols => 30, :rows => 10} %><br />
+    <%= link_to_remove_fields "Remove this reward", f, "destroy" %>
+    </div>
+  <% end %>
+  </div>
+</div>
