@@ -1,8 +1,13 @@
-<% @rewards.each_with_index do |reward, i| %>
-  <div class="grid6 first">
-    <h2>
-    <%= number_to_currency reward.amount %> towards <%= link_to reward.appeal.title, reward.appeal %>
-    </h2>
-    <%= reward.description %>
-  </div>
+<% if @rewards.any? %>
+  <% @rewards.each_with_index do |reward, i| %>
+    <div class="grid6 first">
+      <h2>
+      <%= number_to_currency reward.amount %> towards <%= link_to reward.appeal.title, reward.appeal %>
+      </h2>
+      <%= reward.description %>
+    </div>
+  <% end %>
+<% else %>
+  <p><strong>Your cart is empty!</strong></p>
+  <p>To donate, start by <%= link_to "viewing appeals", appeals_path %>.</p>
 <% end %>
