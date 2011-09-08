@@ -7,3 +7,5 @@ gem 'mysql2', '~> 0.2.8'
 gem "paperclip"
 
 gem "formtastic"
+
+gem "aws-s3"
